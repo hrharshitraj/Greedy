@@ -1,0 +1,27 @@
+import java.util.*;
+public class MyClass {
+    static int minCoins(int coins[], int amount) {
+        int n = coins.length;
+        Arrays.sort(coins);
+        int res = 0;
+        
+        for(int i=n-1; i>=0; i--) {
+            if(coins[i] <= amount) {
+                int c = (int)Math.floor(amount / coins[i]);
+                res += c;
+                amount -= c * coins[i];
+            }
+            
+            if(amount==0) break;
+        }
+        return res;
+    }
+    
+    public static void main(String args[]) {
+        int coins[] = {5,2,10,1};
+        int amount = 52;
+        
+        int res = minCoins(coins,amount);
+        System.out.println(res);    // 6
+    }
+}
