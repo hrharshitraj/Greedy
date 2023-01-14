@@ -9,7 +9,7 @@ class Activity {
     }
 }
 
-class MyCmp implements Comparator<Activity> {
+class MyCmp implements Comparator<Activity> {               // https://www.geeksforgeeks.org/comparator-interface-java/
     public int compare(Activity a1, Activity a2) {
         return a1.finish - a2.finish;
     }
